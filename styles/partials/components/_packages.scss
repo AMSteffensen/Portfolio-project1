@@ -1,0 +1,23 @@
+.package {
+    border: $color__secondary;
+    border: 1px solid black;
+    display: flex;
+    margin-bottom: 2em;
+    background: white;
+
+    &__body {
+        flex-direction: row;
+        padding: 1em;
+        margin-top: 10px;
+    }
+
+    &:hover {
+        background-color: rgba($color__secondary, .1);
+    }
+
+    &__btn {
+        @extend .btn;
+        @extend .btn-primary;
+        background-color: $color__secondary;
+    }
+}
