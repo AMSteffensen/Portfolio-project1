@@ -1,0 +1,13 @@
+/* vendor */
+@import "vendor/bootstrap";
+
+/* base */
+@import "partials/base/variables";
+@import "partials/base/mixins";
+@import "partials/base/blocktags";
+
+/* components */
+@import "partials/components/header";
+@import "partials/components/packages";
+@import "partials/components/footer";
+@import "partials/components/carousel";

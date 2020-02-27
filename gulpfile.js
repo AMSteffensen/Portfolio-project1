@@ -1,11 +1,25 @@
 // Import the dependencies 
-var gulp = require('gulp'),
-  less = require('gulp-less'),
-  minifyCSS = require('gulp-minify-css'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var browserSync = require("browser-sync").create();
+var sass = require("gulp-sass");
+var  minifyCSS = require('gulp-minify-css');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+  
 
+
+// Browsersync server
+gulp.task('serve', function () {
+  browserSync.init({
+    server: {
+      baseDir: "./src"
+    }
+  });
+
+  gulp.watch('src/styles/scss/*.sccs', gulp.parallel('sass'));
+  gulp.watch('src/assets/js/**/*.js', gulp.parallel('js'));
+  gulp.watch("src/*.html").on('change', browserSync.reload);
+});
 
 
 gulp.task('sass', function () {
@@ -36,15 +50,3 @@ gulp.task('watch', function (done) {
 });
 
 
-// Browsersync server
-gulp.task('serve', function () {
-  browserSync.init({
-    server: {
-      baseDir: "./src"
-    }
-  });
-
-  gulp.watch('src/styles/scss/**/*.sccs', gulp.parallel('sass'));
-  gulp.watch('src/assets/js/**/*.js', gulp.parallel('js'));
-  gulp.watch("*.html").on('change', browserSync.reload);
-});
