@@ -1,58 +1,25 @@
-/* Here are example using scss */
+/* vendor */
+//@import "vendor/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
+/* base */
+@import "partials/base/variables";
+@import "partials/base/mixins";
+@import "partials/base/blocktags";
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+/* components */
+@import "partials/components/header";
+@import "partials/components/packages";
+@import "partials/components/footer";
+@import "partials/components/carousel";
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #282c34;
-  color: #fff;
-  font-size: 1.6rem;
-  text-align: center;
+// html {
+//   box-sizing: border-box;
+//   font-size: 62.5%;
+// }
 
-  & > * {
-    margin: 2rem 0;
-  }
-}
-
-.header {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-
-.example {
-  display: flex;
-  justify-content: center;
-
-  &-style,
-  &-lazy-load {
-    margin: 3rem 2rem;
-  }
-}
-
-.from-scss {
-  color: #0096FF;
-}
-
-.link {
-  color: #61dafb;
-  font-size: 2rem;
-  margin-top: 3rem;
-}
-
-#lazy-load {
-  padding: 1rem 1.5rem;
-  border: 0;
-  border-radius: 10rem;
-  outline: none;
-}
+// *,
+// *::before,
+// *::after {
+//   box-sizing: inherit;
+// }

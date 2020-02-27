@@ -1,6 +1,7 @@
 import { hello, tes } from './scripts/import-example';
+import 'bootstrap';
 
-import './styles/style.css';
+//import './styles/style.css';
 import './styles/style.scss';
 
 hello();
